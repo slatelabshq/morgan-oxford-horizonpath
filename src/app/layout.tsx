@@ -67,13 +67,14 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${newsreader.variable} ${instrumentSans.variable} h-full scroll-smooth`}
     >
-      <head>
+      {/* Theme locked to blue — toggle commented out in header */}
+      {/* <head>
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem("horizonpath-theme");if(t==="white"||t==="blue"||t==="teal"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}})();`,
           }}
         />
-      </head>
+      </head> */}
       <body className="min-h-full flex flex-col antialiased">
         <Providers>
           <SmoothScroll>

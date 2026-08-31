@@ -1,14 +1,42 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+function restoreScrollPosition(lenis: Lenis | null) {
+  const hash = window.location.hash;
+
+  if (hash) {
+    const target = document.querySelector(hash);
+    if (target instanceof HTMLElement) {
+      if (lenis) {
+        lenis.scrollTo(target, { immediate: true });
+      } else {
+        target.scrollIntoView();
+      }
+      ScrollTrigger.refresh();
+      return;
+    }
+  }
+
+  if (lenis) {
+    lenis.scrollTo(0, { immediate: true });
+  } else {
+    window.scrollTo(0, 0);
+  }
+
+  ScrollTrigger.refresh();
+}
+
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null);
+  const pathname = usePathname();
+  const isInitialRender = useRef(true);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
@@ -40,6 +68,18 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       lenisRef.current = null;
     };
   }, []);
+
+  useEffect(() => {
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
+      if (window.location.hash) {
+        requestAnimationFrame(() => restoreScrollPosition(lenisRef.current));
+      }
+      return;
+    }
+
+    requestAnimationFrame(() => restoreScrollPosition(lenisRef.current));
+  }, [pathname]);
 
   return <>{children}</>;
 }

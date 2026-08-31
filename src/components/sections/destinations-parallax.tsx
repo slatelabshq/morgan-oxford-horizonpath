@@ -97,7 +97,7 @@ function DestinationCard({
           data-cursor-magnetic
         >
           <Link
-            href="/destinations"
+            href={`/destinations/${dest.id}`}
             className={cn(
               "relative block h-full min-h-[22rem] overflow-hidden rounded-3xl border border-white/10 bg-deep shadow-2xl shadow-black/30",
               "transition-shadow duration-500 hover:shadow-teal/20"

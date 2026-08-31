@@ -1,5 +1,14 @@
 # HorizonPath Education — Checklist
 
+## Theme toggle
+- [x] Comment out theme button in header (desktop + mobile menu)
+- [x] Site stays on blue theme (`data-theme="blue"` in layout; localStorage override commented out)
+
+## Scroll to top on navigation
+- [x] Reset scroll position when route changes (Lenis + fallback)
+- [x] Preserve hash links (e.g. `/#success-stories`)
+- [ ] Verify in browser: nav between pages starts at top
+
 ## Nav cleanup
 - [x] Hide Schools from navbar and footer
 
@@ -97,3 +106,16 @@
 
 ## Remove EduVoyage mentions
 - [x] Rewrite Programmes page band copy (no EduVoyage references)
+
+## Home — Success Stories names & expansion
+- [x] Rename testimonial names to Nigerian names (keep Amara O.)
+- [x] Add four new success stories (Adaeze, Ibrahim, Folake, Emeka)
+- [ ] Review carousel with 8 stories in browser
+
+## Home — remove university carousel
+- [x] Remove PartnerMarquee from home page
+
+## Events section
+- [x] `/events` page with hero + ribbon-style event list
+- [x] Empty state (no dummy events) — add items to `src/content/events.ts`
+- [x] Nav link (separate from Blogs)

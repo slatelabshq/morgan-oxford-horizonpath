@@ -8,7 +8,7 @@ import { navLinks } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/layout/logo";
-import { ThemeToggle } from "@/components/layout/theme-toggle";
+// import { ThemeToggle } from "@/components/layout/theme-toggle";
 import {
   Sheet,
   SheetContent,
@@ -71,8 +71,8 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <ThemeToggle className="hidden sm:inline-flex" />
-          <ThemeToggle compact className="sm:hidden" />
+          {/* <ThemeToggle className="hidden sm:inline-flex" />
+          <ThemeToggle compact className="sm:hidden" /> */}
 
           <Button
             asChild
@@ -117,7 +117,7 @@ export function Header() {
                 ))}
               </div>
               <div className="mt-auto space-y-3">
-                <ThemeToggle className="w-full justify-center" />
+                {/* <ThemeToggle className="w-full justify-center" /> */}
                 <Button asChild variant="accent" className="w-full" data-cursor-accent>
                   <Link href="/contact" onClick={() => setOpen(false)}>
                     Apply Now
