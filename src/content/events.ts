@@ -22,5 +22,5 @@ export const eventsContent = {
     title: "No upcoming events scheduled",
     body: "We publish fair dates and open days here as they are confirmed. Check back soon, or contact us to hear about the next event in your city.",
   },
-  events: [] satisfies EventItem[],
+  events: [] as EventItem[],
 };
