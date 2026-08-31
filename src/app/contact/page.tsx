@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ContactHero } from "@/components/sections/contact-hero";
 import { ContactForms } from "@/components/sections/contact-forms";
+import { ContactOffices } from "@/components/sections/contact-offices";
 import { Reveal } from "@/components/motion/reveal";
 import { IcefBadge } from "@/components/sections/icef-badge";
 
@@ -22,6 +23,7 @@ export default function ContactPage() {
           </Reveal>
 
           <Reveal delay={0.15} className="space-y-8">
+            <ContactOffices />
             <IcefBadge />
 
             <div className="rounded-2xl border border-border/60 bg-card p-6">

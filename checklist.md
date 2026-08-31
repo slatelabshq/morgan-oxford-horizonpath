@@ -1,5 +1,10 @@
 # HorizonPath Education — Checklist
 
+## Contact page — Our offices
+- [x] Copy office data from Morgan Oxford contact (Oxford + Lagos)
+- [x] Add `ContactOffices` sidebar (addresses, phone, email, WhatsApp)
+- [ ] Review on contact page in browser
+
 ## Theme toggle
 - [x] Comment out theme button in header (desktop + mobile menu)
 - [x] Site stays on blue theme (`data-theme="blue"` in layout; localStorage override commented out)

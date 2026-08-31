@@ -33,6 +33,36 @@ export const nextSteps = [
   "Together we map your pathway to the right university.",
 ] as const;
 
+export type Office = {
+  city: string;
+  address: string;
+  phone: string;
+  phoneHref: string;
+  email: string;
+};
+
+export const offices: Office[] = [
+  {
+    city: "Oxford",
+    address: "54 Davenant Road, Oxford OX2 8BY, United Kingdom",
+    phone: "+44 (0)7710 763474",
+    phoneHref: "tel:+447710763474",
+    email: "enquiries@morganoxfordeducation.co.uk",
+  },
+  {
+    city: "Lagos",
+    address: "10, Ologun Agbaje, Victoria Island, Lagos",
+    phone: "+234 (0)806 527 7726",
+    phoneHref: "tel:+2348065277726",
+    email: "enquiries@morganoxfordeducation.co.uk",
+  },
+];
+
+export const whatsapp = {
+  href: "https://wa.me/2348065277726",
+  display: "+234 806 527 7726",
+};
+
 export const contactContent = {
   hero: {
     label: "Contact & Apply",
