@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Newsreader, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { brand } from "@/lib/brand";
+import { defaultShareImage, getSiteUrl } from "@/lib/site-url";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { SmoothScroll } from "@/components/motion/smooth-scroll";
@@ -20,7 +21,10 @@ const instrumentSans = Instrument_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: `${brand.name} — ${brand.tagline}`,
     template: `%s | ${brand.name}`,
@@ -42,12 +46,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
     siteName: brand.name,
+    images: [
+      {
+        url: defaultShareImage.path,
+        width: defaultShareImage.width,
+        height: defaultShareImage.height,
+        alt: defaultShareImage.alt,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${brand.name} — ${brand.tagline}`,
     description:
       "Your bridge to global universities. Expert guidance from first enquiry to enrolment.",
+    images: [defaultShareImage.path],
   },
   robots: {
     index: true,
